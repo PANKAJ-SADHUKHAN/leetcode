@@ -1,0 +1,26 @@
+class Solution {
+    public boolean reorderedPowerOf2(int n) {
+        int[] array=digit(n);
+        int num=1;
+        for(int i=0;i<num;i++)
+        {
+            if(Arrays.equals(array,digit(num)))
+            {
+                return true;
+            }
+             num=num<<1;
+        }
+        return false;
+       
+    }
+    int[] digit(int n)
+    {
+        int arr[]=new int[10];
+        while(n>0)
+        {
+            arr[n%10]++;
+            n/=10;
+        }
+        return arr;
+    }
+}
